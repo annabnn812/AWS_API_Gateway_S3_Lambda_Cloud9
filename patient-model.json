@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Patient",
+    "type": "object",
+    "required": ["id", "first_name", "last_name"],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "first_name": {
+        "type": "string"
+      },
+      "last_name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "format": "email"
+      },
+      "phone": {
+        "type": "string",
+        "pattern": "^[0-9]+$"
+      },
+      "address": {
+        "type": "string"
+      },
+      "diagnosis_code": {
+        "type": "string"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "insurance": {
+        "type": "object",
+        "properties":{
+            "name": {
+                "type": "string"
+              },
+              "plan": {
+                "type": "string"
+              },
+
+             "medicaid": {
+                "type": "boolean"
+             },
+             "value": {
+                "type": "string"
+             }
+        }
+
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+}
