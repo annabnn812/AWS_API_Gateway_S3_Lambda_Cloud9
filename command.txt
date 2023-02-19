@@ -1,0 +1,31 @@
+Download dependencies into folder
+    sudo pip install --target ./forLambda-package aws-xray-sdk
+    sudo pip install --target ./forLambda-package boto3
+
+    cd forLambda-package
+
+     pip install aws-xray-sdk
+     pip install tox
+
+Zip up your code (with dependencies)
+    zip -r9 ${OLDPWD}/ pythonlistPatientsFunction.zip .
+    
+    cd ../
+
+Add python script to zip
+    zip -g pythonlistPatientsFunction.zip . patient.py 
+    
+Create Lambda Function
+    aws lambda create-function --function-name listPatients --runtime python3.9  --role arn:aws:iam::604265391885:role/FullLambda --handler patient.listPatients --publish --zip-file fileb://pythonlistPatientsFunction.zip
+
+Invoke Lambda Function
+    aws lambda invoke --function-name listPatients output.txt
+    
+Update Lambda Code
+    aws lambda update-function-code --function-name listPatients --zip-file fileb://pythonlistPatientsFunction.zip --publish
+
+
+Update Function Configuration
+    aws lambda update-function-configuration --function-name listPatients --tracing-config Mode=Active
+
+
