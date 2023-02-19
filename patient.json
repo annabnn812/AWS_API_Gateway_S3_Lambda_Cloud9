@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "first_name": "Anna",
+    "last_name": "BNN",
+    "email": "annadev812@gmail.com",
+    "phone": "15556667788",
+    "address": "USA, NY, NY ",
+    "diagnosis_code": "CD812",
+    "image_url": "string",
+    "insurance": [
+        {
+          "name": "Well",
+          "plan": "HealthPlus"
+        },
+        {
+          "medicaid": true,
+          "value": "eligibil"
+        }
+    ],
+    "created_at": "12/24/2022"
+},
+{
+  "id": "2",
+  "first_name": "Rosa",
+  "last_name": "Luxem",
+  "email": "rosa@mail.com",
+  "phone": "13477893456",
+  "address": "USA, LA, CA ",
+  "diagnosis_code": "R51",
+  "image_url": "string",
+  "insurance": [
+      {
+        "name": "Safe",
+        "plan": "HealthPlus"
+      },
+      {
+        "medicaid": false,
+        "value": "eligibil"
+      }
+  ],
+  "created_at": "01/15/2023"
+},
+{
+  "id": "3",
+  "first_name": "Lisa",
+  "last_name": "Samar",
+  "email": "lisa_sam@aol.com",
+  "phone": "15562584563",
+  "address": "USA, BS, MA ",
+  "diagnosis_code": "CD812",
+  "image_url": "string",
+  "insurance": [
+      {
+        "name": "Care",
+        "plan": "HealthPlus"
+      },
+      {
+        "medicaid": true,
+        "value": "eligibil"
+      }
+  ],
+  "created_at": "02/21/2023"
+}
+]
