@@ -1,0 +1,104 @@
+#set($inputRoot = $input.path('$'))
+{
+    "patients": [
+        #foreach($elem in $inputRoot)
+            {
+                "id": "$elem.id",
+                "first_name": "$elem.first_name",
+                "last_name": "$elem.last_name",
+                "email": "$elem.email",
+                "phone": "$elem.phone",
+                "address": "$elem.address",
+                "diagnosis_code": "$elem.diagnosis_code",
+                "image_url": "$elem.image_url",
+                "insurance": [
+                    #foreach($insurance in $elem.insurance)
+                        {
+                            "name": "$insurance.name",
+                            "plan": "$insurance.plan",
+                            "medicaid": "$insurance.medicaid",
+                            "value": "$insurance.value"
+                        }
+                    #if($foreach.hasNext),#end
+                    #end
+                ],
+                "created_at": "$elem.created_at"
+            }
+            #if($foreach.hasNext),#end
+        #end
+    ]
+}
+[
+   #if( $input.params('id') == "1" )
+   
+        {
+    "id_str": "1",
+    "first_name_str": "Anna",
+    "last_name_str": "BNN",
+    "email_str": "annadev812@gmail.com",
+    "phone_str": "15556667788",
+    "address_str": "USA, NY, NY ",
+    "diagnosis_code_str": "CD812",
+    "image_url_str": "string",
+    "insurance_str": [
+        {
+          "name_str": "Well",
+          "plan_str": "HealthPlus"
+        },
+        {
+          "medicaid_str": "yes",
+          "value_str": "eligibil"
+        }
+    ],
+    "created_at_str": "12/24/2022"
+},
+
+  #elseif( $input.params('id') == "2" )
+   #elseif( $input.params('firstName') == "Rosa" )
+  
+{ 
+  "id_str": "2",
+  "first_name_str": "Rosa",
+  "last_name_str": "Luxem",
+  "email_str": "rosa@mail.com",
+  "phone_str_str": "13477893456",
+  "address_str": "USA, LA, CA ",
+  "diagnosis_code_str": "R51",
+  "image_url_str": "string",
+  "insurance_str": [
+      {
+        "name_str": "Safe",
+        "plan_str": "HealthPlus"
+      },
+      {
+        "medicaid_str": "yes",
+        "value_str": "eligibil"
+      }
+  ],
+  "created_at_str": "01/15/2023"
+},
+
+#else
+{
+  "id_str": "3",
+  "first_name_str": "Lisa",
+  "last_name_str": "Samar",
+  "email_str": "lisa_sam@aol.com",
+  "phone_str": "15562584563",
+  "address_str": "USA, BS, MA ",
+  "diagnosis_code_str": "CD812",
+  "image_url_str": "string",
+  "insurance_str": [
+      {
+        "name_str": "Care",
+        "plan_str": "HealthPlus"
+      },
+      {
+        "medicaid_str": "yes",
+        "value_str": "eligibil"
+      }
+  ],
+  "created_at_str": "02/21/2023"
+}
+  #end
+ ]
